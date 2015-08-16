@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Product" Language="vb" AutoEventWireup="false" MasterPageFile="~/Customer.Master" CodeBehind="productPageDefault.aspx.vb" Inherits="SAS1.WebForm1" %>
+﻿<%@ Page Title="Product" Language="vb" AutoEventWireup="false" MasterPageFile="~/Customer.Master" CodeBehind="ProductPageDefault.aspx.vb" Inherits="SAS1.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CustContent" runat="server">
 

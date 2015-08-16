@@ -185,9 +185,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet1.css" />
-    <Content Include="Customer Forms\Cart.aspx" />
+    <Content Include="Customer Forms\AddressBook.aspx" />
+    <Content Include="Customer Forms\ChangePassword.aspx" />
+    <Content Include="Customer Forms\EditAddress.aspx" />
+    <Content Include="Customer Forms\OrderHistory.aspx" />
+    <Content Include="Customer Forms\ProductReturnsC.aspx" />
+    <Content Include="Customer Forms\RewardPointsC.aspx" />
+    <Content Include="Customer Forms\ShoppingCart.aspx" />
     <Content Include="Customer Forms\My Account.aspx" />
+    <Content Include="Customer Forms\MyAccountInformation.aspx" />
+    <Content Include="Customer Forms\TransactionsC.aspx" />
     <Content Include="Customer Forms\Wishlist.aspx" />
+    <Content Include="Customer Forms\YourStore.aspx" />
     <Content Include="Employee Forms\AddCoupon.aspx" />
     <Content Include="Employee Forms\AddCustomers.aspx" />
     <Content Include="Employee Forms\AddGiftVouchers.aspx" />
@@ -237,7 +246,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Customer Forms\productPageDefault.aspx" />
+    <Content Include="Customer Forms\ProductPageDefault.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="employeeLogin.aspx" />
@@ -338,11 +347,53 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Customer Forms\Cart.aspx.designer.vb">
-      <DependentUpon>Cart.aspx</DependentUpon>
+    <Compile Include="Customer Forms\AddressBook.aspx.designer.vb">
+      <DependentUpon>AddressBook.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer Forms\Cart.aspx.vb">
-      <DependentUpon>Cart.aspx</DependentUpon>
+    <Compile Include="Customer Forms\AddressBook.aspx.vb">
+      <DependentUpon>AddressBook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\EditAddress.aspx.designer.vb">
+      <DependentUpon>EditAddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\EditAddress.aspx.vb">
+      <DependentUpon>EditAddress.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\OrderHistory.aspx.designer.vb">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\OrderHistory.aspx.vb">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\ProductReturnsC.aspx.designer.vb">
+      <DependentUpon>ProductReturnsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\ProductReturnsC.aspx.vb">
+      <DependentUpon>ProductReturnsC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\RewardPointsC.aspx.designer.vb">
+      <DependentUpon>RewardPointsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\RewardPointsC.aspx.vb">
+      <DependentUpon>RewardPointsC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\ShoppingCart.aspx.designer.vb">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\ShoppingCart.aspx.vb">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Customer Forms\My Account.aspx.designer.vb">
@@ -352,11 +403,32 @@
       <DependentUpon>My Account.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Customer Forms\MyAccountInformation.aspx.designer.vb">
+      <DependentUpon>MyAccountInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\MyAccountInformation.aspx.vb">
+      <DependentUpon>MyAccountInformation.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\TransactionsC.aspx.designer.vb">
+      <DependentUpon>TransactionsC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\TransactionsC.aspx.vb">
+      <DependentUpon>TransactionsC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Customer Forms\Wishlist.aspx.designer.vb">
       <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer Forms\Wishlist.aspx.vb">
       <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\YourStore.aspx.designer.vb">
+      <DependentUpon>YourStore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\YourStore.aspx.vb">
+      <DependentUpon>YourStore.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
@@ -685,8 +757,8 @@
       <DependentUpon>employeeLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Customer Forms\productPageDefault.aspx.vb">
-      <DependentUpon>productPageDefault.aspx</DependentUpon>
+    <Compile Include="Customer Forms\ProductPageDefault.aspx.vb">
+      <DependentUpon>ProductPageDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customer.Master.designer.vb">

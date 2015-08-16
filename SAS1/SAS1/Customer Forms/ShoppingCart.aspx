@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Shopping Cart" Language="vb" AutoEventWireup="false" MasterPageFile="~/Customer.Master" CodeBehind="Cart.aspx.vb" Inherits="SAS1.Cart" %>
+﻿<%@ Page Title="Shopping Cart" Language="vb" AutoEventWireup="false" MasterPageFile="~/Customer.Master" CodeBehind="ShoppingCart.aspx.vb" Inherits="SAS1.Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CustContent" runat="server">
     <div class="container-fluid">
