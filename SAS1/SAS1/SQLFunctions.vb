@@ -7,6 +7,7 @@ Public Class SQLFunctions
     Shared cmd As SqlCommand = New SqlCommand()
     Shared dr As SqlDataReader
 
+#Region "Data Controls"
     Shared Function OpenConnection() As Boolean
         Try
             If cn.State = ConnectionState.Closed Then
@@ -34,6 +35,16 @@ Public Class SQLFunctions
         End If
 
     End Sub
+
+    Shared Sub HandleDataReader()
+        If dr Is Nothing = False Then
+            If dr.IsClosed = False Then
+                dr.Close()
+            End If
+        End If
+    End Sub
+#End Region
+ 
 
     Public Shared Function SiteMaster01() As List(Of String)
         'retrieve categoryName
@@ -123,5 +134,34 @@ Public Class SQLFunctions
             cn.Close()
         End Try
     End Function
+
+#Region "EmployeeDashboard.aspx"
+
+    Public Shared Function ED01() As Integer
+        Try
+            If OpenConnection() = False Then
+                Return Nothing
+            End If
+            cmd.Connection = cn
+            Dim numorders As Integer
+            Dim q1 As String = "SELECT COUNT(*) FROM OrderT"
+            cmd.CommandText = q1
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                numorders = CType(dr("COUNT(*)"), Integer)
+            Else
+                numorders = 0
+            End If
+            Return numorders
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return Nothing
+        Finally
+            HandleDataReader()
+            cn.Close()
+        End Try
+    End Function
+
+#End Region
 
 End Class

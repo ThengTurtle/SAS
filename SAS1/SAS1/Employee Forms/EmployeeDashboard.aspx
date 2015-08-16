@@ -18,7 +18,8 @@
             <div class="col-xs-6 col-sm-4 placeholder">
                 <div class="panel panel-primary">
                     <div class="panel-heading">TOTAL ORDERS</div>
-                    <div class="panel-body">from a-z orders (counting every orders)</div>
+                    <div class="panel-body">
+                        <asp:Label ID="lblTotalOrders" runat="server" Text=""></asp:Label></div>
                     <div class="panel-body">
                         <p><a href="Orders.aspx">View More...</a></p>
                     </div>
@@ -53,7 +54,7 @@
                         <h3 class="panel-title"><i class="glyphicon glyphicon-calendar"></i> Recent Activity</h3>
                     </div>
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="#">Devesh Samaiya</a> registered a new account.<br>
+                        <li class="list-group-item"><a href="#">Devesh Samaiya</a> registered a new account.<br/>
                             <small class="text-muted"><i class="fa fa-clock-o"></i>09/08/2015 01:15:09</small></li>
                     </ul>
                 </div>
