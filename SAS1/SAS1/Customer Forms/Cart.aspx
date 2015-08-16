@@ -5,7 +5,7 @@
         <div class="row">
             <div id="content" class="col-sm-12">
                 <h1>Shopping Cart</h1>
-
+                <br />
                 <%--table--%>
                 <form action="#" method="post" enctype="multipart/form-data" />
                 <div class="table-responsive">

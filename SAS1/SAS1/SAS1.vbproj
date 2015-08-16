@@ -186,6 +186,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="Customer Forms\Cart.aspx" />
+    <Content Include="Customer Forms\My Account.aspx" />
+    <Content Include="Customer Forms\Wishlist.aspx" />
     <Content Include="Employee Forms\AddCoupon.aspx" />
     <Content Include="Employee Forms\AddCustomers.aspx" />
     <Content Include="Employee Forms\AddGiftVouchers.aspx" />
@@ -341,6 +343,20 @@
     </Compile>
     <Compile Include="Customer Forms\Cart.aspx.vb">
       <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\My Account.aspx.designer.vb">
+      <DependentUpon>My Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\My Account.aspx.vb">
+      <DependentUpon>My Account.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Customer Forms\Wishlist.aspx.designer.vb">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Forms\Wishlist.aspx.vb">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.vb">
