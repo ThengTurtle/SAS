@@ -162,6 +162,30 @@ Public Class SQLFunctions
         End Try
     End Function
 
+    Public Shared Function ED02() As Integer
+        Try
+            If OpenConnection() = False Then
+                Return Nothing
+            End If
+            cmd.Connection = cn
+            Dim numorders As Integer
+            Dim q1 As String = "SELECT COUNT(*) FROM OrderT"
+            cmd.CommandText = q1
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                numorders = CType(dr("COUNT(*)"), Integer)
+            Else
+                numorders = 0
+            End If
+            Return numorders
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return Nothing
+        Finally
+            HandleDataReader()
+            cn.Close()
+        End Try
+    End Function
 #End Region
 
 End Class

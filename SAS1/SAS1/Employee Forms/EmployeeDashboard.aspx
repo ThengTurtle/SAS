@@ -21,7 +21,7 @@
                     <div class="panel-body">
                         <asp:Label ID="lblTotalOrders" runat="server" Text=""></asp:Label></div>
                     <div class="panel-body">
-                        <p><a href="Orders.aspx">View More...</a></p>
+                        <p><a href="Orders.aspx" runat="server" >View More...</a></p>
                     </div>
                 </div>
             </div>
