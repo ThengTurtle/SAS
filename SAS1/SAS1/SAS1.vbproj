@@ -622,7 +622,16 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\category.vb" />
+    <Compile Include="Models\customer.vb" />
+    <Compile Include="Models\employee.vb" />
     <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\OrderT.vb" />
+    <Compile Include="Models\order_details.vb" />
+    <Compile Include="Models\product.vb" />
+    <Compile Include="Models\sub_category.vb" />
+    <Compile Include="Models\supplier.vb" />
+    <Compile Include="Models\User.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
