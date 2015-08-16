@@ -32,6 +32,15 @@ Partial Public Class employeeLogin
     Protected WithEvents tbxPassword As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''RememberMe control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RememberMe As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''lblLoginMessage control.
     '''</summary>
     '''<remarks>
@@ -48,4 +57,13 @@ Partial Public Class employeeLogin
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''RegisterHyperLink control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegisterHyperLink As Global.System.Web.UI.WebControls.HyperLink
 End Class

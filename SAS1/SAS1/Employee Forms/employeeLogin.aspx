@@ -54,48 +54,65 @@
         <br />
         <br />
         <div class="container body-content">
-            <div id="content">
-                <div class="container">
-                    <div class="col-sm-offset-4 col-sm-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h1 class="panel-title">Please enter your login details.</h1>
-                            </div>
-                            <div class="panel-body">
-
-                                <div class="form-group">
-                                    <label for="input-username">Username</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <asp:TextBox ID="tbxUsername" placeholder="Username" runat="server" class="form-control"></asp:TextBox>
+            <section id="loginForm">
+                <div id="content">
+                    <div class="container">
+                        <div class="col-sm-offset-4 col-sm-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h1 class="panel-title">Please enter your login details.</h1>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="input-username">Username</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <asp:TextBox ID="tbxUsername" placeholder="Username" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="input-password">Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <asp:TextBox ID="tbxPassword" placeholder="Password" runat="server" class="form-control"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-0 col-md-12">
+                                            <div class="checkbox">
+                                                <asp:CheckBox runat="server" ID="RememberMe" />
+                                                <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <asp:Label ID="lblLoginMessage" runat="server" ForeColor="Red"></asp:Label>
+                                    <div class="text-right">
+                                        <asp:Button ID="btnLogin" class="btn btn-primary" runat="server" Text="Login" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="input-password">Password</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <asp:TextBox ID="tbxPassword" placeholder="Password" runat="server" class="form-control"></asp:TextBox>
-                                    </div>
-                                </div>
-                                <asp:Label ID="lblLoginMessage" runat="server" ForeColor="Red"></asp:Label>
-                                <div class="text-right">
-                                    <asp:Button ID="btnLogin" class="btn btn-primary" runat="server" Text="Login" />
-                                </div>
                             </div>
+                            <p>
+                                <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" Style="cursor: pointer">REGISTER </asp:HyperLink>
+                                if you don't have a local account.
+                            </p>
                         </div>
-                        
                     </div>
+
+
+
+
+                    <%--footer--%>
+                    <hr />
+                    <footer>
+                        <p>&copy; <%: DateTime.Now.Year %> - Shopping Advisor System</p>
+                        <p>
+                            <a runat="server" href="~/About">About</a>
+                            <a runat="server" href="~/Contact">Contact Us</a>
+                        </p>
+                    </footer>
                 </div>
-
-
-           <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Shopping Advisor System</p>
-            </footer>
-
-            </div>
+            </section>
         </div>
-     
     </form>
 </body>
 
