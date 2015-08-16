@@ -1,0 +1,117 @@
+CREATE TABLE [dbo].[customer] (
+    [customerID]  INT           NOT NULL,
+    [lastName]    NVARCHAR (50) NULL,
+    [firstName]   NVARCHAR (50) NULL,
+    [birthDate]   DATE          NULL,
+    [address]    NVARCHAR (50) NULL,
+    [city]       NVARCHAR (50) NULL,
+    [state]      NVARCHAR (50) NULL,
+    [postalCode]  INT           NULL,
+    [phoneNumber] INT           NULL,
+    [email]      NVARCHAR (50) NULL,
+    [UserID]     INT           NULL,
+    PRIMARY KEY CLUSTERED ([customerID] ASC),
+    CONSTRAINT [FK_customer_User] FOREIGN KEY ([UserID]) REFERENCES [dbo].[User] ([UserID])
+);
+
+CREATE TABLE [dbo].[User] (
+    [UserID]  INT           NOT NULL,
+    [UserName] NVARCHAR (50) NOT NULL,
+    [UserType] NVARCHAR (50) NULL,
+    [Password] NVARCHAR(50) NOT NULL, 
+    PRIMARY KEY CLUSTERED ([UserID] ASC)
+);
+
+CREATE TABLE [dbo].[employee] (
+    [employeeID]  INT           NOT NULL,
+    [lastName]    NVARCHAR (50) NULL,
+    [firstName]   NVARCHAR (50) NULL,
+    [birthDate]   DATE          NULL,
+    [title]       NVARCHAR (50) NULL,
+    [hireDate]    DATE NULL,
+    [address]     NVARCHAR (50) NULL,
+    [city]        NVARCHAR (50) NULL,
+    [state]       NVARCHAR (50) NULL,
+    [postalCode]  INT           NULL,
+    [phoneNumber] INT           NULL,
+    [homeNumber]  INT           NULL,
+    [email]       NVARCHAR (50) NULL,
+    [notes]       NVARCHAR (50) NULL,
+    [UserID]      INT           NULL,
+    PRIMARY KEY CLUSTERED ([employeeID] ASC),
+    CONSTRAINT [FK_employee_User] FOREIGN KEY ([UserID]) REFERENCES [dbo].[User] ([UserID])
+);
+
+CREATE TABLE [dbo].[supplier] (
+    [supplierID]   INT           NOT NULL,
+    [companyName]  NVARCHAR (50) NULL,
+    [contactName]  NVARCHAR (50) NULL,
+    [contactTitle] NVARCHAR (50) NULL,
+    [address]      NVARCHAR (50) NULL,
+    [city]         NVARCHAR (50) NULL,
+    [state]        NVARCHAR (50) NULL,
+    [postalCode]   INT           NULL,
+    [phoneNumber]  INT           NULL,
+    [fax]          INT           NULL,
+    PRIMARY KEY CLUSTERED ([supplierID] ASC)
+);
+
+CREATE TABLE [dbo].[category]
+(
+	[categoryID] INT NOT NULL PRIMARY KEY, 
+    [categoryName] NVARCHAR(50) NULL, 
+    [description] NVARCHAR(50) NULL
+)
+
+
+CREATE TABLE [dbo].[sub_category]
+(
+	[subCategoryID] INT NOT NULL PRIMARY KEY, 
+    [Name] NVARCHAR(50) NULL, 
+    [description] NVARCHAR(50) NULL, 
+    [categoryID] INT NULL, 
+    CONSTRAINT [FK_sub_category_categoryID] FOREIGN KEY ([categoryID]) REFERENCES [category]([categoryID])
+)
+
+CREATE TABLE [dbo].[product]
+(
+	[productID] INT NOT NULL PRIMARY KEY, 
+    [categoryID] INT NOT NULL, 
+    [supplierID] INT NOT NULL, 
+    [productName] NVARCHAR(50) NULL, 
+    [productDescription] NVARCHAR(50) NULL, 
+    [Quantity] INT NULL, 
+    [unitPrice] NUMERIC(10, 2) NULL, 
+    [unitInStock] SMALLINT NULL, 
+    [unitOnOrder] SMALLINT NULL, 
+    [reorderLevel] SMALLINT NULL, 
+    CONSTRAINT [FK_product_categoryID] FOREIGN KEY ([categoryID]) REFERENCES [category]([categoryID]), 
+    CONSTRAINT [FK_product_supplierID] FOREIGN KEY ([supplierID]) REFERENCES [supplier]([supplierID])
+)
+
+CREATE TABLE [dbo].[OrderT]
+(
+	[orderID] INT NOT NULL PRIMARY KEY, 
+    [customerID] INT NULL, 
+    [employeeID] INT NULL, 
+    [orderDate] DATE NULL, 
+    CONSTRAINT [FK_OrderT_customerID] FOREIGN KEY ([customerID]) REFERENCES [customer]([customerID]), 
+    CONSTRAINT [FK_OrderT_employeeID] FOREIGN KEY ([employeeID]) REFERENCES [employee]([employeeID])
+)
+
+CREATE TABLE [dbo].[order_details] (
+    [orderID]   INT             NOT NULL,
+    [productID] INT             NOT NULL,
+    [unitPrice] NUMERIC (10, 2) NULL,
+    [quantity]  SMALLINT        NULL,
+    [discount]  REAL            NULL,
+    PRIMARY KEY CLUSTERED ([orderID] ASC)
+);
+
+
+
+
+
+
+
+
