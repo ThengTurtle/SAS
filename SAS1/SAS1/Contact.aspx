@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Contact" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.vb" Inherits="SAS1.Contact" %>
+﻿<%@ Page Title="Contact" Language="VB" MasterPageFile="~/Customer.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.vb" Inherits="SAS1.Contact" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="CustContent" runat="server">
     <h2><%: Title %></h2>
     <p>Developer's Information.</p>
 

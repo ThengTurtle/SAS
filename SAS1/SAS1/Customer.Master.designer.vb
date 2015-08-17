@@ -11,23 +11,23 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Site
+Partial Public Class SiteMaster
 
     '''<summary>
-    '''head control.
+    '''rptrCategoryList control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents rptrCategoryList As Global.System.Web.UI.WebControls.Repeater
 
     '''<summary>
-    '''MainContent control.
+    '''CustContent control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents MainContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents CustContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class
