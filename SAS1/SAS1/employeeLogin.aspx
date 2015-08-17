@@ -92,8 +92,7 @@
                                 </div>
                             </div>
                             <p>
-                                <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" Style="cursor: pointer">REGISTER </asp:HyperLink>
-                                if you don't have a local account.
+                                <a href="employeeRegister.aspx">Register </a>if you don't have an account.
                             </p>
                         </div>
                     </div>
