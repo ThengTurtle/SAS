@@ -196,7 +196,7 @@
     <Content Include="Customer Forms\MyAccountInformation.aspx" />
     <Content Include="Customer Forms\TransactionsC.aspx" />
     <Content Include="Customer Forms\Wishlist.aspx" />
-    <Content Include="Customer Forms\YourStore.aspx" />
+    <Content Include="YourStore.aspx" />
     <Content Include="Employee Forms\AddCoupon.aspx" />
     <Content Include="Employee Forms\AddCustomers.aspx" />
     <Content Include="Employee Forms\AddGiftVouchers.aspx" />
@@ -211,6 +211,7 @@
     <Content Include="Employee Forms\CustomerOrdersReport.aspx" />
     <Content Include="Employee Forms\CustomerRewardPointsReport.aspx" />
     <Content Include="Employee Forms\Customers.aspx" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Employee Forms\EditCoupon.aspx" />
     <Content Include="Employee Forms\EditCustomer.aspx" />
     <Content Include="Employee Forms\EditGiftVouchers.aspx" />
@@ -234,7 +235,6 @@
     <Content Include="Employee Forms\Orders.aspx" />
     <Content Include="Employee Forms\Product Returns.aspx" />
     <Content Include="Employee Forms\Product.aspx" />
-    <Content Include="Employee Forms\EmployeeDashboard.aspx" />
     <Content Include="Employee Forms\VoucherThemes.aspx" />
     <Content Include="employeeRegister.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -425,10 +425,10 @@
       <DependentUpon>Wishlist.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Customer Forms\YourStore.aspx.designer.vb">
+    <Compile Include="YourStore.aspx.designer.vb">
       <DependentUpon>YourStore.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer Forms\YourStore.aspx.vb">
+    <Compile Include="YourStore.aspx.vb">
       <DependentUpon>YourStore.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -535,6 +535,13 @@
     </Compile>
     <Compile Include="Employee Forms\Customers.aspx.vb">
       <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Employee Forms\EditCoupon.aspx.designer.vb">
@@ -698,13 +705,6 @@
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee Forms\EmployeeDashboard.aspx.designer.vb">
-      <DependentUpon>EmployeeDashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Employee Forms\EmployeeDashboard.aspx.vb">
-      <DependentUpon>EmployeeDashboard.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Employee Forms\VoucherThemes.aspx.designer.vb">
       <DependentUpon>VoucherThemes.aspx</DependentUpon>
     </Compile>
@@ -729,6 +729,7 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActivityLog.vb" />
     <Compile Include="Models\category.vb" />
     <Compile Include="Models\customer.vb" />
     <Compile Include="Models\employee.vb" />

@@ -15,6 +15,8 @@
             lblLoginMessage.Text = "User Name not found ! New User Please register"
         ElseIf result(0) = 0 Then
             lblLoginMessage.Text = "Password incorrect"
+        ElseIf result(0) = 1 Then
+            Response.Redirect("Dashboard.aspx")
         End If
     End Sub
 End Class

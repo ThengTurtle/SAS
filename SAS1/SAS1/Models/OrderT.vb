@@ -39,5 +39,38 @@
         End Set
     End Property
 
+    Private _Status As String
+    Public Property Status() As String
+        Get
+            Return _Status
+        End Get
+        Set(ByVal value As String)
+            _Status = value
+        End Set
+    End Property
+
+
+    'extra properties
+    Private _CustomerName As String
+    Public Property CustomerName() As String
+        Get
+            Return _CustomerName
+        End Get
+        Set(ByVal value As String)
+            _CustomerName = value
+        End Set
+    End Property
+
+    Private _UnitPrice As Decimal
+    Public Property UnitPrice() As Decimal
+        Get
+            Return _UnitPrice
+        End Get
+        Set(ByVal value As Decimal)
+            _UnitPrice = value
+        End Set
+    End Property
+
+
 
 End Class
