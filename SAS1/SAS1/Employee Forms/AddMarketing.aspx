@@ -46,14 +46,6 @@
                                 <input type="text" name="code" value="55c9081976be8" placeholder="Tracking Code" id="input-code" class="form-control"><br />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" for="input-example"><span data-toggle="tooltip" title="" data-original-title="So the system can track refferals you neeed to add the tracking code to the end of the URL linking to your site.">Examples <span class="label label-primary">?</span></span></label>
-                            <div class="col-sm-10">
-                                <input type="text" placeholder="Examples" id="input-example1" class="form-control">
-                                <br>
-                                <input type="text" placeholder="Examples" id="input-example2" class="form-control">
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

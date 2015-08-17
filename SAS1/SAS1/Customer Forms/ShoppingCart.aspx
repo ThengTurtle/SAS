@@ -160,6 +160,10 @@
                             <td class="text-right">$101.00</td>
                         </tr>
                         <tr>
+                            <td class="text-right"><strong>GST 6%</strong></td>
+                            <td class="text-right">$2.00</td>
+                        </tr>
+                        <tr>
                             <td class="text-right"><strong>Total:</strong></td>
                             <td class="text-right">$123.20</td>
                         </tr>

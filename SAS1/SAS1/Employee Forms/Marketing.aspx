@@ -9,7 +9,7 @@
             <br />
             <div class="nav navbar-nav navbar-right">
                 <a href="AddMarketing.aspx" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add New"><i class="glyphicon glyphicon-plus"></i></a>
-                <button type="button" data-toggle="tooltip" title="" class="btn btn-danger" onclick="confirm('Delete/Uninstall cannot be undone! Are you sure you want to do this?') ? $('#form-marketing').submit() : false;" data-original-title="Delete"><i class="glyphicon glyphicon-menu-left"></i></button>
+                <button type="button" data-toggle="tooltip" title="" class="btn btn-danger" onclick="confirm('Delete/Uninstall cannot be undone! Are you sure you want to do this?') ? $('#form-marketing').submit() : false;" data-original-title="Delete"><i class="glyphicon glyphicon-trash"></i></button>
             </div>
             <h1>Marketing Tracking</h1>
             <br />
@@ -42,7 +42,7 @@
                             </div>
 
                             <%--second column--%>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label class="control-label" for="input-date-added">Date Added</label>
                                     <div class="input-group date">

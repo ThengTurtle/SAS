@@ -86,7 +86,7 @@
                                     <td class="text-left">Date End</td>
                                     <td class="text-right">No. Orders</td>
                                     <td class="text-right">No. Products</td>
-                                    <td class="text-right">Tax</td>
+                                    <td class="text-right">Tax (GST)</td>
                                     <td class="text-right">Total</td>
                                 </tr>
                             </thead>
