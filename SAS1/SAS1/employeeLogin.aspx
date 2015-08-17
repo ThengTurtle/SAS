@@ -19,7 +19,7 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="MsAjaxBundle"/>
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="respond" />
