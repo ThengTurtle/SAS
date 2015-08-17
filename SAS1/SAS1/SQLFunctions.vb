@@ -144,11 +144,11 @@ Public Class SQLFunctions
             End If
             cmd.Connection = cn
             Dim numorders As Integer
-            Dim q1 As String = "SELECT COUNT(*) FROM OrderT"
+            Dim q1 As String = "SELECT * FROM OrderT"
             cmd.CommandText = q1
             dr = cmd.ExecuteReader
             If dr.HasRows Then
-                numorders = CType(dr("COUNT(*)"), Integer)
+                numorders += 1
             Else
                 numorders = 0
             End If
@@ -168,16 +168,131 @@ Public Class SQLFunctions
                 Return Nothing
             End If
             cmd.Connection = cn
-            Dim numorders As Integer
-            Dim q1 As String = "SELECT COUNT(*) FROM OrderT"
+            Dim numsales As Integer = 0
+            Dim q1 As String = "SELECT * FROM Sales"
             cmd.CommandText = q1
             dr = cmd.ExecuteReader
             If dr.HasRows Then
-                numorders = CType(dr("COUNT(*)"), Integer)
+                While dr.Read
+                    numsales += 1
+                End While
             Else
-                numorders = 0
+                numsales = 0
             End If
-            Return numorders
+            Return numsales
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return Nothing
+        Finally
+            HandleDataReader()
+            cn.Close()
+        End Try
+    End Function
+
+    Public Shared Function ED03() As Integer
+        Try
+            If OpenConnection() = False Then
+                Return Nothing
+            End If
+            cmd.Connection = cn
+            Dim numcustomer As Integer
+            Dim q1 As String = "SELECT * FROM [customer]"
+            cmd.CommandText = q1
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                While dr.Read
+
+                    numcustomer += 1
+                End While
+            Else
+                numcustomer = 0
+            End If
+            Return numcustomer
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return Nothing
+        Finally
+            HandleDataReader()
+            cn.Close()
+        End Try
+    End Function
+
+    Public Shared Function ED04() As List(Of OrderT)
+        Try
+            If OpenConnection() = False Then
+                Return Nothing
+            End If
+            cmd.Connection = cn
+            Dim orderts As List(Of OrderT) = New List(Of OrderT)
+            Dim q1 = "SELECT TOP (5) * FROM [OrderT] ORDER BY orderID DESC"
+            cmd.CommandText = q1
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                While dr.Read
+                    Dim ot As OrderT = New OrderT
+                    ot.orderID = CType(dr("orderID"), Integer)
+                    ot.customerID = CType(dr("customerID"), Integer)
+                    ot.Status = dr("Status").ToString
+                    ot.orderDate = CType(dr("orderDate"), Date)
+                    orderts.Add(ot)
+                End While
+            End If
+            dr.Close()
+
+            For Each ot In orderts
+                Dim q2 = "SELECT firstName, lastName FROM [customer] WHERE customerID = " & ot.customerID
+                cmd.CommandText = q2
+                dr = cmd.ExecuteReader
+                If dr.HasRows Then
+                    While dr.Read
+                        ot.CustomerName = dr("firstName").ToString & " " & dr("lastName").ToString
+                    End While
+                End If
+                dr.Close()
+
+                Dim q3 = "SELECT unitPrice FROM [order_details] WHERE orderID = " & ot.orderID
+                cmd.CommandText = q3
+                dr = cmd.ExecuteReader
+                If dr.HasRows Then
+                    While dr.Read
+                        ot.UnitPrice = CType(dr("unitPrice"), Decimal)
+                    End While
+                End If
+            Next
+
+            Return orderts
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return Nothing
+        Finally
+            HandleDataReader()
+            cn.Close()
+        End Try
+    End Function
+
+    Public Shared Function ED05() As List(Of ActivityLog)
+        Try
+            If OpenConnection() = False Then
+                Return Nothing
+            End If
+            cmd.Connection = cn
+            Dim activity As List(Of ActivityLog) = New List(Of ActivityLog)
+            Dim q1 = "SELECT TOP (5) * FROM ActivityLog"
+            cmd.CommandText = q1
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                While dr.Read
+                    Dim act As ActivityLog = New ActivityLog
+                    act.Act_ID = CType(dr("Act_ID"), Integer)
+                    act.DateTime = CType(dr("DateTime"), Date)
+                    act.Description = dr("Description").ToString
+
+                    activity.Add(act)
+                End While
+            End If
+            dr.Close()
+
+            Return activity
         Catch ex As Exception
             ExceptionHandling(ex)
             Return Nothing
