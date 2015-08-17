@@ -10,7 +10,7 @@
             <h1 class="intro">Shopping Advisor System a platform for customers and sellers</h1>
         </div>
         <div class="buttons">
-			<a href="#register" class="btn btn-info">Register</a>
+			<a href="employeeRegister.aspx" class="btn btn-info">Register</a>
 			<a href="employeeLogin.aspx" class="btn btn-danger">Login</a>
 		</div>
     </div>

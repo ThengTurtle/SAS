@@ -236,6 +236,7 @@
     <Content Include="Employee Forms\Product.aspx" />
     <Content Include="Employee Forms\EmployeeDashboard.aspx" />
     <Content Include="Employee Forms\VoucherThemes.aspx" />
+    <Content Include="employeeRegister.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="ImageSource\groceryMain.jpg" />
     <Content Include="packages.config" />
@@ -717,6 +718,13 @@
     <Compile Include="Employee.Master.vb">
       <DependentUpon>Employee.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employeeRegister.aspx.designer.vb">
+      <DependentUpon>employeeRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employeeRegister.aspx.vb">
+      <DependentUpon>employeeRegister.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
