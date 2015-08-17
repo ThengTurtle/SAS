@@ -48,4 +48,13 @@ Partial Public Class Register
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ConfirmPassword As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''RegisterHyperLink control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegisterHyperLink As Global.System.Web.UI.WebControls.HyperLink
 End Class

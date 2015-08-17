@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Log in" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Login.aspx.vb" Inherits="SAS1.Login" Async="true" %>
+﻿<%@ Page Title="Log in" Language="vb" AutoEventWireup="false" MasterPageFile="~/Customer.Master" CodeBehind="Login.aspx.vb" Inherits="SAS1.Login" Async="true" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="CustContent">
     <h2><%: Title %>.</h2>
 
     <div class="row">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <p>
-                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">REGISTER </asp:HyperLink>
                     if you don't have a local account.
                 </p>
             </section>

@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Register" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Register.aspx.vb" Inherits="SAS1.Register" %>
+﻿<%@ Page Title="Register" Language="vb" AutoEventWireup="false" MasterPageFile="~/Customer.Master" CodeBehind="Register.aspx.vb" Inherits="SAS1.Register" %>
 
 <%@ Import Namespace="SAS1" %>
 <%@ Import Namespace="Microsoft.AspNet.Identity" %>
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="CustContent">
     <h2><%: Title %>.</h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
@@ -38,10 +38,16 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
             </div>
         </div>
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
+
+        <p>
+            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled" Style="cursor: pointer">LOGIN </asp:HyperLink>
+            if you have a local account.
+        </p>
     </div>
 </asp:Content>

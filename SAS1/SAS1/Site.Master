@@ -1,22 +1,16 @@
-﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="SAS1.SiteMaster" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="SAS1.Site" %>
 
-<%@ Import Namespace="SAS1" %>
-<%@ Import Namespace="Microsoft.AspNet.Identity" %>
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> </title>
-
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    
 </head>
 <body>
     <form runat="server">
@@ -42,87 +36,23 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">SAS</a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </div>
             </div>
         </div>
 
 
-
-        <div class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="container body-content">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="true">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Home</a>
-                    </div>
-
-                    <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-2" aria-expanded="true">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">PROMOTION</a></li>
-                            <li class="dropdown" style="width: auto;">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="height: auto;">Category<span class="caret" style="height: auto;"></span></a>
-                                <ul class="dropdown-menu" role="menu" style="height: auto; overflow: auto;" aria-expanded="false" runat ="server" >
-                                    <asp:Repeater ID="rptrCategoryList" runat="server">
-                                        <ItemTemplate>    
-                                            <li><a href="#"><%# Container.DataItem %></a></li>                                        
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="navbar-form navbar-right" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
 
 
-        <div class="container body-content">
+        <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Shopping Advisor System</p>
-                <p>
-                    <a runat="server" href="~/About">About</a>
-                    <a runat="server" href="~/Contact">Contact Us</a>
-                </p>
-            </footer>
         </div>
     </form>
 </body>
