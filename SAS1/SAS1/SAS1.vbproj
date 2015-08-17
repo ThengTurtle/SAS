@@ -211,6 +211,7 @@
     <Content Include="Employee Forms\CustomerOrdersReport.aspx" />
     <Content Include="Employee Forms\CustomerRewardPointsReport.aspx" />
     <Content Include="Employee Forms\Customers.aspx" />
+    <Content Include="Employee Forms\Dashboard.aspx" />
     <Content Include="Employee Forms\EditCoupon.aspx" />
     <Content Include="Employee Forms\EditCustomer.aspx" />
     <Content Include="Employee Forms\EditGiftVouchers.aspx" />
@@ -234,7 +235,6 @@
     <Content Include="Employee Forms\Orders.aspx" />
     <Content Include="Employee Forms\Product Returns.aspx" />
     <Content Include="Employee Forms\Product.aspx" />
-    <Content Include="Employee Forms\EmployeeDashboard.aspx" />
     <Content Include="Employee Forms\VoucherThemes.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="ImageSource\groceryMain.jpg" />
@@ -536,6 +536,13 @@
       <DependentUpon>Customers.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Employee Forms\Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Forms\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Employee Forms\EditCoupon.aspx.designer.vb">
       <DependentUpon>EditCoupon.aspx</DependentUpon>
     </Compile>
@@ -696,13 +703,6 @@
     <Compile Include="Employee Forms\Product.aspx.vb">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employee Forms\EmployeeDashboard.aspx.designer.vb">
-      <DependentUpon>EmployeeDashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Employee Forms\EmployeeDashboard.aspx.vb">
-      <DependentUpon>EmployeeDashboard.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Employee Forms\VoucherThemes.aspx.designer.vb">
       <DependentUpon>VoucherThemes.aspx</DependentUpon>

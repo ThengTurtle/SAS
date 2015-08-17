@@ -1,10 +1,8 @@
-﻿<%@ Page Title="Dashboard" Language="vb" AutoEventWireup="false" MasterPageFile="~/Employee.Master" CodeBehind="EmployeeDashboard.aspx.vb" Inherits="SAS1.WebForm2" %>
-
+﻿<%@ Page Title="Dashboard" Language="vb" AutoEventWireup="false" MasterPageFile="~/Employee.Master" CodeBehind="Dashboard.aspx.vb" Inherits="SAS1.Dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <%--Content Header--%>
+      <%--Content Header--%>
     <div class="col-sm-9 col-sm-offset-4 col-md-10 col-md-offset-2 main">
         <div class="container-fluid">
             <h1>Dashboard</h1>
