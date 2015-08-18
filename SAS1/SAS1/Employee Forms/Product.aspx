@@ -8,9 +8,8 @@
         <div class="container-fluid">
             <br />
             <div class="nav navbar-nav navbar-right">
-                <a href="AddProduct.aspx" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="Add New"><i class="glyphicon glyphicon-plus"></i></a>
-                <button type="submit" form="form-product" formaction="#" data-toggle="tooltip" title="" class="btn btn-default btn-sm" data-original-title="Copy"><i class="glyphicon glyphicon-duplicate"></i></button>
-                <button type="submit" data-toggle="tooltip" title="" class="btn btn-danger btn-sm" onclick="confirm('Delete/Uninstall cannot be undone! Are you sure you want to do this?') ? $('#form-product').submit() : false;" data-original-title="Delete"><i class="glyphicon glyphicon-trash"></i></button>
+                <a href="AddProduct.aspx" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="Add New" runat="server"><i class="glyphicon glyphicon-plus"></i></a>
+                <asp:Linkbutton id="btndelete" data-toggle="tooltip" title="" class="btn btn-danger btn-sm"    OnClientClick="return confirm('Delete cannot be undone! Are you sure you want to do this?')" data-original-title="Delete" runat="server"><i class="glyphicon glyphicon-trash"></i></asp:Linkbutton>
             </div>
             <h1>Products</h1>
             <br />
@@ -33,81 +32,80 @@
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label class="control-label" for="input-name">Product Name</label>
-                                    <input type="text" name="filter_name" value="" placeholder="Product Name" id="input-name" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                                    <asp:TextBox ID="tbxProductName" runat="server" placeholder="Product Name" class="form-control" autocomplete="off" ></asp:TextBox><ul class="dropdown-menu"></ul>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="input-model">Model</label>
-                                    <input type="text" name="filter_model" value="" placeholder="Model" id="input-model" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label class="control-label" for="input-price">Price</label>
-                                    <input type="text" name="filter_price" value="" placeholder="Price" id="input-price" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="input-quantity">Quantity</label>
-                                    <input type="text" name="filter_quantity" value="" placeholder="Quantity" id="input-quantity" class="form-control">
+                                    <asp:TextBox ID="tbxPrice" runat="server" placeholder="Price" class="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label class="control-label" for="input-status">Status</label>
-                                    <select name="filter_status" id="input-status" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="1">Enabled</option>
-                                        <option value="0">Disabled</option>
-                                    </select>
+                                    <label class="control-label" for="input-quantity">Quantity</label>
+                                    <asp:TextBox ID="tbxQuantity" runat="server" placeholder="Quantity" class="form-control" ></asp:TextBox>
                                 </div>
-                                <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-search"></i> Filter</button>
+                                <div class="form-group">
+                                    <label class="control-label" for="input-status">Status</label>
+                                    <asp:DropDownList ID="ddlStatus" runat="server" class="form-control">
+                                        <asp:ListItem Value="-1">--Select One---</asp:ListItem>
+                                        <asp:ListItem Value="1">Enabled</asp:ListItem>
+                                        <asp:ListItem Value="0">Disabled</asp:ListItem>
+                                    </asp:DropDownList>
+                                    </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" id="btnFilter" runat="server" onserverclick ="btnFilter_ServerClick"  class="btn btn-primary pull-right"><i class="glyphicon glyphicon-search"></i> Filter</button>
                             </div>
                         </div>
                     </div>
 
                     <%-- table--%>
-                    <form action="#" method="post" enctype="multipart/form-data" id="form-product">
+                    
                         <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <td style="width: 1px;" class="text-center">
-                                            <input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></td>
-                                        <td class="text-center">Image</td>
-                                        <td class="text-left"><a href="#" class="asc">Product Name</a>
+                            <asp:ListView ID ="lvItemdisplay" runat ="server" GroupPlaceholderID ="groupPlaceHolder1" ItemPlaceholderID ="itemPlaceHolder1" >
+                            <LayoutTemplate>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td style="width: 1px;" class="text-center">
+                                                <asp:CheckBox ID="cbxAll" runat="server" OnCheckedChanged="cbxAll_CheckedChanged"/></td>
+                                            <td class="text-center">Image</td>
+                                            <td class="text-left"><a href="#" class="asc">Product Name</a></td>
+                                            <td class="text-left"><a href="#">Price</a>
+                                            </td>
+                                            <td class="text-right"><a href="#">Quantity</a>
+                                            </td>
+                                            <td class="text-left"><a href="#">Status</a>
+                                            </td>
+                                            <td class="text-right">Action</td>
+                                        </tr>
+                                    </thead>
+                                    <asp:PlaceHolder runat ="server" ID ="groupPlaceHolder1"></asp:PlaceHolder>
+                                </table>
+                            </LayoutTemplate>
+                            <GroupTemplate>
+                                <tr>
+                                    <asp:PlaceHolder runat ="server" ID ="itemPlaceHolder1"></asp:PlaceHolder>
+                                </tr>
+                            </GroupTemplate>
+                            <ItemTemplate >
+                                <td class="text-center">
+                                    <asp:CheckBox ID="cbxProducts" runat="server" />
                                         </td>
-                                        <td class="text-left"><a href="#">Model</a>
+                                <td class="text-center">
+                                    <asp:Image ID="imgproductimage" runat="server" class="img-thumbnail" ImageUrl='~/ImageSource/<%# Eval("ImageUrl")%>'/>
                                         </td>
-                                        <td class="text-left"><a href="#">Price</a>
-                                        </td>
-                                        <td class="text-right"><a href="#">Quantity</a>
-                                        </td>
-                                        <td class="text-left"><a href="#">Status</a>
-                                        </td>
-                                        <td class="text-right">Action</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center">
-                                            <input type="checkbox" name="selected[]" value="42">
-                                        </td>
-                                        <td class="text-center">
-                                            <img src="#" alt="test;" class="img-thumbnail">
-                                        </td>
-                                        <td class="text-left">test"</td>
-                                        <td class="text-left">Product 15</td>
-                                        <td class="text-left"><span style="text-decoration: line-through;">100.0000</span><br>
-                                            <div class="text-danger">90.0000</div>
-                                        </td>
-                                        <td class="text-right"><span class="label label-success">990</span>
-                                        </td>
-                                        <td class="text-left">Enabled</td>
-                                        <td class="text-right"><a href="EditProduct.aspx" data-toggle="tooltip" title="" class="btn btn-primary btn-xs" data-original-title="Edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <td class="text-left"><%# Eval("productName")%></td>
+                                <td class="text-left"><span style="text-decoration: line-through;"><%# Eval("unitPrice")%></span><br/>
+                                            <div class="text-danger"><%# Eval("DiscountedPrice")%></div>
+                                <td class="text-left"><%# Eval("Quantity")%></td>
+                                <td class="text-left"><%# ShowStatus(Eval("Status")) %></td>
+                                <td class="text-right"><a href="EditProduct.aspx" data-toggle="tooltip" title="" class="btn btn-primary btn-xs" data-original-title="Edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+                                    <td style="display:none"><asp:HiddenField ID="hfProductsHiddenvalue" runat="server" Value='<%# Eval("productID") %>' /></td>
+                            </ItemTemplate>
+                        </asp:ListView>
                         </div>
-                    </form>
+               
                     <div class="row">
                         <div class="col-sm-6 text-left"></div>
                         <div class="col-sm-6 text-right">Showing 1 to 20 </div>
