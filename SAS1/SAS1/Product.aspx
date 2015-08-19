@@ -1,6 +1,22 @@
 ﻿<%@ Page Title="Products" Language="vb" AutoEventWireup="false" MasterPageFile="~/Employee.Master" CodeBehind="Product.aspx.vb" Inherits="SAS1.ProductList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type = "text/javascript">
+        function checkAll(objRef) {
+            var listview = objRef.parentNode.parentNode.parentNode;
+            var inputList = listview.getElementsByTagName("input");
+            for (var i = 0; i < inputList.length; i++) {
+                if (inputList[i].type == "checkbox") {
+                    if (objRef.checked) {
+                        inputList[i].checked = true;
+                    }
+                    else {
+                        inputList[i].checked = false;
+                    }
+                }
+            }
+        }
+</script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <%--Content Header--%>
@@ -68,7 +84,7 @@
                                     <thead>
                                         <tr>
                                             <td style="width: 1px;" class="text-center">
-                                                <asp:CheckBox ID="cbxAll" runat="server" OnCheckedChanged="cbxAll_CheckedChanged"/></td>
+                                                <asp:CheckBox ID="checkAll" runat="server" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
                                             <td class="text-center">Image</td>
                                             <td class="text-left"><a href="#" class="asc">Product Name</a></td>
                                             <td class="text-left"><a href="#">Price</a>
