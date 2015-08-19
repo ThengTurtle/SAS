@@ -303,4 +303,67 @@ Public Class SQLFunctions
     End Function
 #End Region
 
+#Region "Product.aspx"
+    Public Shared Function P01(ByVal query As String) As List(Of product)
+        Try
+            If OpenConnection() = False Then
+                Return Nothing
+            End If
+            cmd.Connection = cn
+            Dim products As List(Of product) = New List(Of product)
+            cmd.CommandText = query
+            dr = cmd.ExecuteReader
+            If dr.HasRows Then
+                While dr.Read
+                    Dim product As product = New product
+                    product.productID = CType(dr("productID"), Integer)
+                    product.ImageUrl = dr("productName").ToString & ".jpg"
+                    product.productName = dr("productName").ToString
+                    product.unitPrice = CType(dr("unitPrice"), Decimal)
+                    product.Quantity = CType(dr("Quantity"), Integer)
+                    Dim s = dr("Status").ToString
+                    If CType(dr("Status"), Boolean) = True Then
+                        product.Status = True
+                    ElseIf CType(dr("Status"), Boolean) = False Then
+                        product.Status = False
+                    End If
+
+                    product.DiscountedPrice = Format(product.unitPrice * (1 - CType(dr("discountRate"), Decimal)), "0.00")
+
+                    products.Add(product)
+                End While
+            End If
+
+            Return products
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return Nothing
+        Finally
+            HandleDataReader()
+            cn.Close()
+        End Try
+    End Function
+
+    Public Shared Function P02(ByVal producIDs As List(Of Integer))
+        Try
+            If OpenConnection() = False Then
+                Return False
+            End If
+            cmd.Connection = cn
+            For Each product In producIDs
+                Dim q1 = "DELETE FROM [product] WHERE productID = " & product
+                cmd.CommandText = q1
+                cmd.ExecuteNonQuery()
+            Next
+
+            Return True
+        Catch ex As Exception
+            ExceptionHandling(ex)
+            Return False
+        Finally
+            cn.Close()
+        End Try
+    End Function
+#End Region
+
 End Class

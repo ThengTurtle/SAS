@@ -99,5 +99,39 @@
         End Set
     End Property
 
+    Private _Status As Boolean
+    Public Property Status() As Boolean
+        Get
+            Return _Status
+        End Get
+        Set(ByVal value As Boolean)
+            _Status = value
+        End Set
+    End Property
+
+
+    'extra property
+    Private _DiscountedPrice As Decimal
+    Public Property DiscountedPrice() As Decimal
+        Get
+            Return _DiscountedPrice
+        End Get
+        Set(ByVal value As Decimal)
+            _DiscountedPrice = value
+        End Set
+    End Property
+
+    Private _ImageUrl As String
+    Public Property ImageUrl() As String
+        Get
+            Return _ImageUrl
+        End Get
+        Set(ByVal value As String)
+            _ImageUrl = value
+        End Set
+    End Property
+
+
+
 
 End Class

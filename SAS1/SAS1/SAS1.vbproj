@@ -196,6 +196,9 @@
     <Content Include="Customer Forms\MyAccountInformation.aspx" />
     <Content Include="Customer Forms\TransactionsC.aspx" />
     <Content Include="Customer Forms\Wishlist.aspx" />
+    <Content Include="ImageSource\handphone.jpg" />
+    <Content Include="ImageSource\laptop.jpg" />
+    <Content Include="ImageSource\tablet.jpg" />
     <Content Include="YourStore.aspx" />
     <Content Include="Employee Forms\AddCoupon.aspx" />
     <Content Include="Employee Forms\AddCustomers.aspx" />
@@ -234,7 +237,7 @@
     <Content Include="Employee Forms\ViewOrder.aspx" />
     <Content Include="Employee Forms\Orders.aspx" />
     <Content Include="Employee Forms\Product Returns.aspx" />
-    <Content Include="Employee Forms\Product.aspx" />
+    <Content Include="Product.aspx" />
     <Content Include="Employee Forms\VoucherThemes.aspx" />
     <Content Include="employeeRegister.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -698,10 +701,10 @@
       <DependentUpon>Product Returns.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Employee Forms\Product.aspx.designer.vb">
+    <Compile Include="Product.aspx.designer.vb">
       <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee Forms\Product.aspx.vb">
+    <Compile Include="Product.aspx.vb">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
