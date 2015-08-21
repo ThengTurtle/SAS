@@ -196,6 +196,15 @@
     <Content Include="Customer Forms\MyAccountInformation.aspx" />
     <Content Include="Customer Forms\TransactionsC.aspx" />
     <Content Include="Customer Forms\Wishlist.aspx" />
+    <Content Include="ImageSource\banner\backtoschool_sales.jpg" />
+    <Content Include="ImageSource\banner\clerance_sales.png" />
+    <Content Include="ImageSource\banner\merdeka_sales.jpg" />
+    <Content Include="ImageSource\best_seller\ayamasHotDog.jpg" />
+    <Content Include="ImageSource\best_seller\colgate_total.jpg" />
+    <Content Include="ImageSource\best_seller\nescafe3in1.jpg" />
+    <Content Include="ImageSource\best_seller\sunwhite_rice.jpg" />
+    <Content Include="ImageSource\best_seller\top_detergent_powder.jpg" />
+    <Content Include="ImageSource\best_seller\wiseCottage.jpg" />
     <Content Include="ImageSource\handphone.jpg" />
     <Content Include="ImageSource\laptop.jpg" />
     <Content Include="ImageSource\tablet.jpg" />
