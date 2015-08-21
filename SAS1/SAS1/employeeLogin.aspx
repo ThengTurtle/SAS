@@ -74,7 +74,7 @@
                                         <label for="input-password">Password</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                            <asp:TextBox ID="tbxPassword" placeholder="Password" runat="server" class="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="tbxPassword" placeholder="Password" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="form-group">
