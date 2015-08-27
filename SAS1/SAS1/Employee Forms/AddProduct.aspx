@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <br />
             <div class="nav navbar-nav navbar-right">
-                <button type="submit" form="form-product" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="Save" data-placement="left"><i class="glyphicon glyphicon-floppy-disk"></i></button>
+                <button type="submit" form="form-product" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="Save" data-placement="left" runat="server" id="btnSave" onserverclick="btnSave_ServerClick"><i class="glyphicon glyphicon-floppy-disk"></i></button>
                 <a href="Product.aspx" data-toggle="tooltip" title="" class="btn btn-default btn-sm" data-original-title="Cancel"><i class="glyphicon glyphicon-menu-left (Cancel button)"></i></a>
             </div>
             <h1>Products</h1>
@@ -47,13 +47,13 @@
                                 <div class="form-group required">
                                     <label class="col-sm-2 control-label" for="input-name1">Product Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="product_description[1][name]" value="" placeholder="Product Name" id="input-name1" class="form-control"><br />
+                                        <asp:TextBox ID="tbxProductName" runat="server" placeholder="Product Name" class="form-control"></asp:TextBox><asp:RequiredFieldValidator ID="rfvProductName" runat="server" ErrorMessage="*Product Name Required" ControlToValidate="tbxProductName" ForeColor="Red" ></asp:RequiredFieldValidator><br />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-related"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Description</span></label>
                                     <div class="col-sm-8">
-                                        <textarea class="form-control" rows="3" id="textArea" style="margin: 0px -14.84375px 0px 0px; height: 78px; width: 440px;"></textarea>
+                                        <asp:TextBox ID="tbxDescription" runat="server" class="form-control" TextMode="MultiLine" Columns="50" Rows="5" style="margin: 0px -14.84375px 0px 0px;" ></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -66,72 +66,73 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-image">Image</label>
                                     <div class="col-sm-10">
-                                        <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
-                                            <img src="#"></a>
-                                        <input type="hidden" name="image" value="" id="input-image"/><br />
+                                        <asp:FileUpload ID="fuProductImage" runat="server" /><asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" OnClientClick="upload"/><asp:Image  class="img-thumbnail" runat="server" ID="imgProductImage"/>
+                                        <%--<a href="#" id="thumb-image" data-toggle="image" class="img-thumbnail">
+                                            <img src="#"/></a>
+                                        <input type="hidden" name="image" value="" id="input-image"/>--%><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group required">
                                     <label class="col-sm-2 control-label" for="input-model">Model</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="model" value="" placeholder="Model" id="input-model" class="form-control"><br />
+                                        <input type="text" name="model" value="" placeholder="Model" id="input-model" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="" data-original-title="Stock Keeping Unit">SKU <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="sku" value="" placeholder="SKU" id="input-sku" class="form-control"><br />
+                                        <input type="text" name="sku" value="" placeholder="SKU" id="input-sku" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-upc"><span data-toggle="tooltip" title="" data-original-title="Universal Product Code">UPC <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="upc" value="" placeholder="UPC" id="input-upc" class="form-control"><br />
+                                        <input type="text" name="upc" value="" placeholder="UPC" id="input-upc" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="" data-original-title="European Article Number">EAN <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="ean" value="" placeholder="EAN" id="input-ean" class="form-control"><br />
+                                        <input type="text" name="ean" value="" placeholder="EAN" id="input-ean" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-jan"><span data-toggle="tooltip" title="" data-original-title="Japanese Article Number">JAN <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="jan" value="" placeholder="JAN" id="input-jan" class="form-control"><br />
+                                        <input type="text" name="jan" value="" placeholder="JAN" id="input-jan" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-isbn"><span data-toggle="tooltip" title="" data-original-title="International Standard Book Number">ISBN <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="isbn" value="" placeholder="ISBN" id="input-isbn" class="form-control"><br />
+                                        <input type="text" name="isbn" value="" placeholder="ISBN" id="input-isbn" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-mpn"><span data-toggle="tooltip" title="" data-original-title="Manufacturer Part Number">MPN <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="mpn" value="" placeholder="MPN" id="input-mpn" class="form-control"><br />
+                                        <input type="text" name="mpn" value="" placeholder="MPN" id="input-mpn" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-location">Location</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="location" value="" placeholder="Location" id="input-location" class="form-control"><br />
+                                        <input type="text" name="location" value="" placeholder="Location" id="input-location" class="form-control"/><br />
                                     </div><br />
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-price">Price</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="price" value="" placeholder="Price" id="input-price" class="form-control"><br />
+                                        <input type="text" name="price" value="" placeholder="Price" id="input-price" class="form-control"/><br />
                                     </div>
                                 </div>
 
@@ -148,14 +149,14 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-quantity">Quantity</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="quantity" value="1" placeholder="Quantity" id="input-quantity" class="form-control"><br />
+                                        <input type="text" name="quantity" value="1" placeholder="Quantity" id="input-quantity" class="form-control"/><br />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="input-minimum"><span data-toggle="tooltip" title="" data-original-title="Force a minimum ordered amount">Minimum Quantity <span class="label label-primary">?</span</span></label>
+                                    <label class="col-sm-2 control-label" for="input-minimum"><span data-toggle="tooltip" title="" data-original-title="Force a minimum ordered amount">Minimum Quantity</span> <span class="label label-primary">?</></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="minimum" value="1" placeholder="Minimum Quantity" id="input-minimum" class="form-control"><br />
+                                        <input type="text" name="minimum" value="1" placeholder="Minimum Quantity" id="input-minimum" class="form-control"/><br />
                                     </div>
                                 </div>
 
@@ -170,7 +171,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="input-stock-status"><span data-toggle="tooltip" title="" data-original-title="Status shown when a product is out of stock">Out Of Stock Status <span class="label label-primary">?</span</span></label>
+                                    <label class="col-sm-2 control-label" for="input-stock-status"><span data-toggle="tooltip" title="" data-original-title="Status shown when a product is out of stock">Out Of Stock Status <span class="label label-primary">?</span></span></label>
                                     <div class="col-sm-10">
                                         <select name="stock_status_id" id="input-stock-status" class="form-control">
                                             <option value="6">2-3 Days</option>
@@ -226,13 +227,13 @@
                                     <div class="col-sm-10">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <input type="text" name="length" value="" placeholder="Length" id="input-length" class="form-control">
+                                                <input type="text" name="length" value="" placeholder="Length" id="input-length" class="form-control"/>
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="text" name="width" value="" placeholder="Width" id="input-width" class="form-control">
+                                                <input type="text" name="width" value="" placeholder="Width" id="input-width" class="form-control"/>
                                             </div>
                                             <div class="col-sm-4">
-                                                <input type="text" name="height" value="" placeholder="Height" id="input-height" class="form-control"><br />
+                                                <input type="text" name="height" value="" placeholder="Height" id="input-height" class="form-control"/><br />
                                             </div>
                                         </div>
                                     </div>
@@ -252,7 +253,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-weight">Weight</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="weight" value="" placeholder="Weight" id="input-weight" class="form-control"><br />
+                                        <input type="text" name="weight" value="" placeholder="Weight" id="input-weight" class="form-control"/><br />
                                     </div>
                                 </div>
 
@@ -281,7 +282,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-sort-order">Sort Order</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="sort_order" value="1" placeholder="Sort Order" id="input-sort-order" class="form-control">
+                                        <input type="text" name="sort_order" value="1" placeholder="Sort Order" id="input-sort-order" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -292,15 +293,15 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-manufacturer"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Manufacturer</span></label>
                                     <div class="col-sm-9">
-                                        <input type="text" name="manufacturer" value="" placeholder="Manufacturer" id="input-manufacturer" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
-                                        <input type="hidden" name="manufacturer_id" value="0"><br />
+                                        <input type="text" name="manufacturer" value="" placeholder="Manufacturer" id="input-manufacturer" class="form-control" autocomplete="off"/><ul class="dropdown-menu"></ul>
+                                        <input type="hidden" name="manufacturer_id" value="0"/><br />
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="input-related"><span data-toggle="tooltip" title="" data-original-title="(Autocomplete)">Related Products (product categorization) </span></label>
                                     <div class="col-sm-8">
-                                        <input type="text" name="related" value="" placeholder="Related Products" id="input-related" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul>
+                                        <input type="text" name="related" value="" placeholder="Related Products" id="input-related" class="form-control" autocomplete="off"/><ul class="dropdown-menu"></ul>
                                     </div>
                                 </div>
                             </div>

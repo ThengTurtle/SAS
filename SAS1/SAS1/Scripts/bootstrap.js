@@ -2,7 +2,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
 +function ($) { "use strict";
 
-  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // CSS TRANSITION SUPPORT
   // ============================================================
 
   function transitionEnd() {
@@ -1772,6 +1772,11 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
 }(window.jQuery);
 
+
+// Tooltip
+// ==============
 $(document).ready(function () {
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 });
+
+
